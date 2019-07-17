@@ -32,6 +32,7 @@ public class MainMenu extends javax.swing.JFrame {
         enterRoom = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         title.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         title.setText("Bomber Man");
@@ -46,6 +47,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         createRoom.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         createRoom.setText("Criar Sala");
+        createRoom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createRoomActionPerformed(evt);
+            }
+        });
 
         enterRoom.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         enterRoom.setText("Entrar");
@@ -61,11 +67,11 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(enterRoom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(100, 100, 100)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(title)
-                        .addGap(100, 100, 100))
+                        .addGap(99, 99, 99))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(leaveButton)
                         .addContainerGap())))
@@ -91,6 +97,12 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_leaveButtonActionPerformed
+
+    private void createRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createRoomActionPerformed
+        // TODO add your handling code here:
+        new CreateRoom().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_createRoomActionPerformed
 
     /**
      * @param args the command line arguments
