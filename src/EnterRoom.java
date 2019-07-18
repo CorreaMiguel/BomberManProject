@@ -8,12 +8,12 @@
  *
  * @author migue
  */
-public class CreateRoom extends javax.swing.JFrame {
+public class EnterRoom extends javax.swing.JFrame {
 
     /**
      * Creates new form MainMenu
      */
-    public CreateRoom() {
+    public EnterRoom() {
         initComponents();
     }
 
@@ -29,8 +29,10 @@ public class CreateRoom extends javax.swing.JFrame {
         title = new javax.swing.JLabel();
         leaveButton = new javax.swing.JButton();
         playerNameText = new javax.swing.JLabel();
-        createButton = new javax.swing.JButton();
+        roomIDText = new javax.swing.JLabel();
+        enterButton = new javax.swing.JButton();
         playerNameCamp = new javax.swing.JTextField();
+        roomIDCamp = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,8 +49,10 @@ public class CreateRoom extends javax.swing.JFrame {
 
         playerNameText.setText("Nome do Jogador:");
 
-        createButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        createButton.setText("Criar");
+        roomIDText.setText("ID da sala:");
+
+        enterButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        enterButton.setText("Entrar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,13 +67,17 @@ public class CreateRoom extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(createButton)
+                            .addComponent(enterButton)
                             .addComponent(title)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(playerNameText)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(playerNameText)
+                            .addComponent(roomIDText))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(playerNameCamp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(roomIDCamp, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(playerNameCamp))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -81,9 +89,13 @@ public class CreateRoom extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(playerNameText)
                     .addComponent(playerNameCamp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(createButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(roomIDText)
+                    .addComponent(roomIDCamp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enterButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(leaveButton)
                 .addContainerGap())
         );
@@ -98,10 +110,12 @@ public class CreateRoom extends javax.swing.JFrame {
     }//GEN-LAST:event_leaveButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton createButton;
+    private javax.swing.JButton enterButton;
     private javax.swing.JButton leaveButton;
     private javax.swing.JTextField playerNameCamp;
     private javax.swing.JLabel playerNameText;
+    private javax.swing.JTextField roomIDCamp;
+    private javax.swing.JLabel roomIDText;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
