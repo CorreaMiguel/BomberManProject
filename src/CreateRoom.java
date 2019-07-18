@@ -49,6 +49,11 @@ public class CreateRoom extends javax.swing.JFrame {
 
         createButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         createButton.setText("Criar");
+        createButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,6 +101,14 @@ public class CreateRoom extends javax.swing.JFrame {
         new MainMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_leaveButtonActionPerformed
+
+    private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
+        // TODO add your handling code here:
+        Server server = new Server(port);
+        Player player = new Player (sprite, playerNameCamp.getText());;
+        Client client = new Client(localhost,port,player);
+        dispose();
+    }//GEN-LAST:event_createButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createButton;
